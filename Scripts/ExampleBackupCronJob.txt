@@ -1,0 +1,9 @@
+One way to set a cronjob to take a backup of etc and var every 15 minutes would be:
+
+1. Do crontab -e
+2. */15 * * * * tar -czvf /home/backups/etc.tar.gz /etc
+
+2. */15 * * * * tar -czvf /home/backups/var.tar.gz /var
+
+Downsides to this are that it will replace the previous backup.
+If it were made into a proper script, you would be able to increment the backups so that you can have several of them
